@@ -102,4 +102,61 @@ function galleryHover()
     }, 800 ); //Overlay Slide Speed
 }
 //--------------------------------------------------------------------------------------------------------
-  
+//shop hover
+
+shopHover=document.getElementById("shop")
+shopModalHover=document.getElementById("shop-section")
+shopHover.addEventListener("mouseover", shopLinkHover, false);
+shopHover.addEventListener("mouseover", shopLinkHoverActive, false);
+
+shopModalHover.addEventListener("mouseover", shopLinkModalHover, false);
+shopModalHover.addEventListener("mouseover", shopLinkModalHoverActive, false);
+
+shopHover.addEventListener("mouseout",  shopLinkNonHoverActive, false);
+shopHover.addEventListener("mouseout",  shopLinkModalNonHoverActive, false);
+
+var timesLoaded = 0;
+
+function shopLinkHoverActive(){
+  active = true;
+  document.querySelector('#shop-section').setAttribute("style", "display:block;pointer-events:all")
+  timesLoaded++;
+}
+
+function shopLinkNonHoverActive(){
+  active = false;
+  document.querySelector('#shop-section').setAttribute("style", "display:none;pointer-events:none")
+}
+
+function shopLinkModalHoverActive(){
+  active = true;
+  document.querySelector('#shop-section').setAttribute("style", "display:block;pointer-events:all")
+}
+
+function shopLinkModalNonHoverActive(){
+  active = false;
+  document.querySelector('#shop-section').setAttribute("style", "display:none;pointer-events:none")
+}
+
+if (timesLoaded === 0){
+  document.querySelector('#shop-section').setAttribute("style", "display:none;pointer-events:none")
+}
+
+function shopLinkHover()
+{  
+    myInterval = setInterval(function() {
+        if(active !== true){
+            return;
+        } else {
+        }
+    }, 800 ); //Overlay Slide Speed
+}
+
+function shopLinkModalHover(){
+    myInterval = setInterval(function() {
+      if(active !== true){
+          return;
+      } else {
+      }
+  }, 800 ); //Overlay Slide Speed
+}

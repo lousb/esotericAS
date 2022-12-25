@@ -4,6 +4,10 @@
   	<title>ParticleSlider</title>
     <link rel="stylesheet" href="main.less"/>
     <link rel="icon" href="Images/LW-logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins&display=swap" rel="stylesheet">
+
   </head>
   <body id="particle-slider">
       <div class="slides">
@@ -11,31 +15,47 @@
       	</div>
     	</div>
   		<canvas class="draw"></canvas>
-      <section id="page-wrap">
-        <main>
-          <div class="page-one">
-            <div class="logo-container">
-              <h1 class="logo logoE">Esoteric</h1>
-              <h1 class="logo logoA">Art</h1>
-              <h1 class="logo logoS">Studio</h1>
-            </div>
-          </div>
-          <nav>
-              <li class="nav-li">
-                <a class="nav-item" href="#">gallery</a>
-              </li>
-              <li class="nav-li">
-                <a class="nav-item"  href="#">shop</a>
-              </li>
-              <li class="nav-li">
-                <a class="nav-item"  href="https://instagram.com/esoteric.artstudio/"><img class="instagram-li"  src="/assets/pngfind.com-instagram-png-white-2773517.png"></a>
-              </li>
+        <nav>
+            <li class="nav-li" id="gallery">
+              <a class="nav-item" href="#">gallery</a>
+            </li>
+            <li class="nav-li" id="shop" >
+              <a class="nav-item nav-shop"  href="#">shop</a>
+            </li>
+            <li class="nav-li" id="cart">
+              <a href="#" class="nav-item">cart</a>
+            </li>
+            <li class="nav-li" id="info">
+              <a href="#" class="nav-item">more_info</a>
+            </li>
+            <li class="nav-li">
+              <a class="nav-item insta"  href="https://instagram.com/esoteric.artstudio/"><img class="instagram-li"  src="/assets/pngfind.com-instagram-png-white-2773517.png"></a>
+            </li>
           </nav>
-        </main>
         <div id="overlay"></div>
         <div id="overlay-images">
         </div>
         <!-- <div class="test"></div> -->
+      </section>
+      <section id="shop-section">
+        <div class="shop-nav">
+          <a class="tee-bag-wrap" href="#">
+            <div class="tee-wrap">
+              <h2 class="tee-title nav-title">
+                265GSM TEE
+              </h2>
+              <p class="nav-view">View</p>
+            </div>
+          </a>
+          <a class="tee-bag-wrap" href="#">
+            <div class="bag-wrap">
+              <h2 class="bag-title nav-title">
+                BBO BAG
+              </h2>
+              <p class="nav-view">View</p>
+            </div>
+          </a>
+        </div>
       </section>
     <script src="main.js"></script>
   </body>
