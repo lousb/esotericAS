@@ -102,61 +102,33 @@ function galleryHover()
     }, 800 ); //Overlay Slide Speed
 }
 //--------------------------------------------------------------------------------------------------------
-//shop hover
-
+//shop - hover
 shopHover=document.getElementById("shop")
 shopModalHover=document.getElementById("shop-section")
-shopHover.addEventListener("mouseover", shopLinkHover, false);
+
+//hover nav 'shop' link - listen events
 shopHover.addEventListener("mouseover", shopLinkHoverActive, false);
 
-shopModalHover.addEventListener("mouseover", shopLinkModalHover, false);
-shopModalHover.addEventListener("mouseover", shopLinkModalHoverActive, false);
 
-shopHover.addEventListener("mouseout",  shopLinkNonHoverActive, false);
-shopHover.addEventListener("mouseout",  shopLinkModalNonHoverActive, false);
+modalActive=false;
 
-var timesLoaded = 0;
-
+//handles active hover status of nav 'shop' link
 function shopLinkHoverActive(){
-  active = true;
-  document.querySelector('#shop-section').setAttribute("style", "display:block;pointer-events:all")
-  timesLoaded++;
+  if(modalActive===false){
+    document.querySelector('#shop-section').setAttribute("style", "z-index:3;display:block;pointer-events:all")
+    document.querySelector('#close-button').setAttribute("style", "opacity:1;")
+    document.querySelector('#nav-shop').setAttribute("style", "opacity:0; pointer-events:all;")
+  }
 }
 
-function shopLinkNonHoverActive(){
-  active = false;
-  document.querySelector('#shop-section').setAttribute("style", "display:none;pointer-events:none")
-}
 
-function shopLinkModalHoverActive(){
-  active = true;
-  document.querySelector('#shop-section').setAttribute("style", "display:block;pointer-events:all")
-}
 
-function shopLinkModalNonHoverActive(){
-  active = false;
-  document.querySelector('#shop-section').setAttribute("style", "display:none;pointer-events:none")
-}
 
-if (timesLoaded === 0){
-  document.querySelector('#shop-section').setAttribute("style", "display:none;pointer-events:none")
-}
-
-function shopLinkHover()
-{  
-    myInterval = setInterval(function() {
-        if(active !== true){
-            return;
-        } else {
-        }
-    }, 800 ); //Overlay Slide Speed
-}
-
-function shopLinkModalHover(){
-    myInterval = setInterval(function() {
-      if(active !== true){
-          return;
-      } else {
-      }
-  }, 800 ); //Overlay Slide Speed
+//closes shop modal
+function closeShopModal(){
+  modalActive = true;
+  document.querySelector('#shop-section').setAttribute("style", "display:none;pointer-events:none");
+  document.querySelector('#close-button').setAttribute("style", "opacity:0;");
+  setTimeout(() => {    document.querySelector('#nav-shop').setAttribute("style", "opacity:1; pointer-events:all;") }, 200);
+  setTimeout(() => { modalActive = false }, 300);
 }

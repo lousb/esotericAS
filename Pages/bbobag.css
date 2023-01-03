@@ -1,0 +1,57 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    overflow: hidden;
+}
+.announce{
+    width:100%;
+    display:flex;
+    height:1em;
+    background-color: red;
+    justify-content: center;
+    align-items: center;
+}
+.announce p{
+    color:white;
+    margin:10px;
+}
+.main-wrap{
+    background-image: url(/Images/bag.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height:100vh;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.bag-information *{
+    margin-right:40px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+}
+.bag-title{
+    font-family: 'Abril Fatface', cursive;
+    font-size: 5rem;
+}
+.breadcrumbs{
+    margin-right: 40%;
+    width: 100%;
+    white-space: nowrap;
+    font-weight: 100;
+    font-size: 11px;
+    text-align: right;
+    letter-spacing: 2px;
+}
+.breadcrumbs a{
+    font-size: 14px;
+    text-decoration: none;
+}
+.bag-price price{
+    text-align: right;
+    margin:0;
+}
+
+
