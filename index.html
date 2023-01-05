@@ -3,7 +3,16 @@
   	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
   	<title>Esoteric Art Studio</title>
     <link rel="stylesheet" href="main.less"/>
-    <link rel="icon" href="Images/LW-logo.svg">
+    <link
+      href="./Images/EsotericLogoRingAllign.svg"
+      rel="icon"
+      media="(prefers-color-scheme: light)"
+    />
+    <link
+      href="./Images/whitelogo.png"
+      rel="icon"
+      media="(prefers-color-scheme: dark)"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins&display=swap" rel="stylesheet">
@@ -23,8 +32,8 @@
               <a class="nav-item" href="#">gallery</a>
             </li>
             <li class="nav-li" id="shop" >
-              <a id="nav-shop" class="nav-item nav-shop"  href="#">shop</a>
-              <a id="close-button" class="close-button" onclick="closeShopModal()">
+              <a id="nav-shop" class="nav-item nav-shop" onclick="shopLinkHoverActive()" href="#">shop</a>
+              <!-- <a id="close-button" class="close-button" onclick="closeShopModal()"> -->
               </a>
             </li>
             <li class="nav-li" id="cart">
