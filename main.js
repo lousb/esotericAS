@@ -109,6 +109,11 @@ shopModalHover=document.getElementById("shop-section")
 //hover nav 'shop' link - listen events
 shopHover.addEventListener("mouseover", shopLinkHoverActive, false);
 
+const shopLink = document.getElementById("shop");
+
+const closeButton = document.createElement("a");
+closeButton.id = "close-button";
+
 
 modalActive=false;
 
@@ -116,7 +121,7 @@ modalActive=false;
 function shopLinkHoverActive(){
   if(modalActive===false){
     document.querySelector('#shop-section').setAttribute("style", "z-index:3;display:block;pointer-events:all")
-    document.querySelector('#close-button').setAttribute("style", "opacity:1;")
+    shopLink.appendChild(closeButton);
     document.querySelector('#nav-shop').setAttribute("style", "opacity:0; pointer-events:all;")
   }
 }
@@ -125,10 +130,10 @@ function shopLinkHoverActive(){
 
 
 //closes shop modal
-function closeShopModal(){
+closeButton.onclick = function () {
   modalActive = true;
   document.querySelector('#shop-section').setAttribute("style", "display:none;pointer-events:none");
-  document.querySelector('#close-button').setAttribute("style", "opacity:0;");
+  closeButton.remove();
   setTimeout(() => {    document.querySelector('#nav-shop').setAttribute("style", "opacity:1; pointer-events:all;") }, 200);
   setTimeout(() => { modalActive = false }, 300);
 }

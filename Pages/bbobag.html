@@ -3,36 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
     <title>Shop - BBO Bag</title>
     <link rel="stylesheet" href="bbobag.css"/>
-    <link rel="icon" href="Images/LW-logo.svg">
-    
+    <link
+      href="./Images/EsotericLogoRingAllign.svg"
+      rel="icon"
+      media="(prefers-color-scheme: light)"
+    />
+    <link
+      href="./Images/whitelogo.png"
+      rel="icon"
+      media="(prefers-color-scheme: dark)"
+    />
 </head>
 <body class="shop-body">
     <announcement>
         <div class="announce"><p>Site still under construction, most features dont work lol</p></div>
     </announcement>
     <main>
+        <nav>
+            <li class="nav-li" id="gallery">
+              <a class="nav-item" href="#">gallery</a>
+            </li>
+            <li class="nav-li" id="shop" >
+              <a id="nav-shop" class="nav-item nav-shop" onclick="shopLinkHoverActive()" href="#">shop</a>
+              <!-- <a id="close-button" class="close-button" onclick="closeShopModal()"> -->
+              </a>
+            </li>
+            <li class="nav-li" id="cart">
+              <a href="#" class="nav-item">cart</a>
+            </li>
+            <li class="nav-li" id="info">
+              <a href="#" class="nav-item">more_info</a>
+            </li>
+            <li class="nav-li">
+              <a class="nav-item insta"  href="https://instagram.com/esoteric.artstudio/"><img class="instagram-li"  src="/assets/pngfind.com-instagram-png-white-2773517.png"></a>
+            </li>
+        </nav>
         <div class="main-wrap">
+            <div class="bag-image-wrap">
+                <img class="bag-image" src="/Images/IMG_5613 2.JPG" alt="bag-image">
+            </div>
             <div class="bag-information">
-                <h2 class="bag-title">
-                    BBO BAG
-                </h2>
+                <h2 class="bag-title">BBO BAG</h2>
                 <h6 class="breadcrumbs">
-                    <a href="" style="margin:0;">Home</a> / <a href="">Shop</a>
+                    <u><a href="/" style="margin:0;">Home</a></u> / <a href="">Shop</a>
                 </h6>
                 <div class="bag-description">
                     <div class="price">
-                        <h3 class="bag-title bag-price">
-                            $222
+                        <h3 class="bag-price">
+                            $199
                         </h3>
                     </div>
-                    <div class="bag-text"></div>
+                    <div class="quantity-add-wrap">
+                        <div class="quantity-wrap">
+                            <div class="quantity">1</div>
+                            <div class="increase-decrease">
+                                <div class="increase" onclick="increaseQuantity()">+</div>
+                                <div class="decrease" onclick="decreaseQuantity()">-</div>
+                            </div>
+                        </div>
+                        <div class="cart-wrap" onclick="addToCart()">
+                            <a class="cart-add" href="#">add to cart</a>
+                        </div>
+                    </div>
+                    <div class="bag-text">
+                        <p class="d-title">Description</p>
+                        <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque at aut deserunt numquam illo ipsum minima libero ipsam fugiat sint?</p>
+                    </div>
                     
                 </div>
             </div>
         </div>
     </main>
+    <script src="bbobag.js"></script>
 </body>
 </html>
