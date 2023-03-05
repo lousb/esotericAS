@@ -838,6 +838,9 @@ section{
     overflow: auto;
     overflow-x: hidden;
   }
+  .instagram{
+    display: none;
+  }
   .second-section{
     width: 80%;
   }
@@ -912,8 +915,20 @@ section{
     width: 100vw;
     height: 80vh;
     transform: translateX(0) !important;
-    background-position-x: center ;
+    background-position-x: center !important;
     background-position-y: -275px;
+  }
+  .nav-li{
+    width:25vw;
+    display: flex;
+    justify-content: center;
+  }
+  .closing-bracket{
+    margin-left:0;
+  }
+  .nav-item{
+    text-align: center;
+    width:100%;
   }
 
   nav{
