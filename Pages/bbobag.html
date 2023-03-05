@@ -7,76 +7,187 @@
     <title>Shop - BBO Bag</title>
     <link rel="stylesheet" href="bbobag.css"/>
     <link
-      href="./Images/EsotericLogoRingAllign.svg"
+      href="/Images/EsotericLogoRingAllign.svg"
       rel="icon"
       media="(prefers-color-scheme: light)"
     />
     <link
-      href="./Images/whitelogo.png"
+      href="/Images/whitelogo.png"
       rel="icon"
       media="(prefers-color-scheme: dark)"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
 </head>
 <body class="shop-body">
-    <announcement>
-        <div class="announce"><p>Site still under construction, most features dont work lol</p></div>
-    </announcement>
-    <main>
-        <nav>
-            <li class="nav-li" id="gallery">
-              <a class="nav-item" href="#">gallery</a>
-            </li>
-            <li class="nav-li" id="shop" >
-              <a id="nav-shop" class="nav-item nav-shop" onclick="shopLinkHoverActive()" href="#">shop</a>
-              <!-- <a id="close-button" class="close-button" onclick="closeShopModal()"> -->
-              </a>
-            </li>
-            <li class="nav-li" id="cart">
-              <a href="#" class="nav-item">cart</a>
-            </li>
-            <li class="nav-li" id="info">
-              <a href="#" class="nav-item">more_info</a>
-            </li>
-            <li class="nav-li">
-              <a class="nav-item insta"  href="https://instagram.com/esoteric.artstudio/"><img class="instagram-li"  src="/assets/pngfind.com-instagram-png-white-2773517.png"></a>
-            </li>
-        </nav>
-        <div class="main-wrap">
-            <div class="bag-image-wrap">
-                <img class="bag-image" src="/Images/IMG_5613 2.JPG" alt="bag-image">
+
+    <main onload="carouselString()">
+        <a href="/" class="logo"></a>
+        <div class="nav-wrap ">
+            <nav>
+                <li class="nav-li" id="gallery">
+                  <a class="nav-item" href="#">gallery</a>
+                </li>
+                <li class="nav-li" id="shop" >
+                  <a id="nav-shop" class="nav-item nav-shop" onclick="shopLinkHoverActive()" href="#">shop</a>
+                  <!-- <a id="close-button" class="close-button" onclick="closeShopModal()"> -->
+                  </a>
+                </li>
+                <li class="nav-li white" id="cart" onclick="displayCart()">
+                    <a href="#" class="nav-item">cart</a>
+                    <span class="bracket">(</span><div id="cart-amount"></div> <span class="closing-bracket bracket">)</span>
+                </li>
+                <li class="nav-li white" id="info">
+                  <a href="./moreinfo.html" class="nav-item">more_info</a>
+                </li>
+                <li class="nav-li">
+                  <a class="nav-item insta"  href="https://instagram.com/esoteric.artstudio/"><img class="instagram-li"  src="/assets/pngfind.com-instagram-png-white-2773517.png"></a>
+                </li>
+            </nav>
+            <div id="cart-popup" style="display: none;">
+              <div class="popup-wrap">
+
+                <ul id="cart-items"></ul>
+                <div class="cart-buttons">
+                  <button class="close-cart" onclick="closeCart()">X</button>
+                  
+                  
+                  <form id="checkoutForm" method="post" action="./../srvr/server.php">
+                    <input type="hidden" name="data" id="checkout_data">
+                    <button class="checkout" type="button" id="checkout-button" onclick="checkout()">Checkout</button>
+                  </form>
+
+                  
+                  
+                </div>
+              </div>
             </div>
+        </div>
+        
+        <div class="main-wrap" id="top">
+          <section class="first-section" >
             <div class="bag-information">
+              <div class="main-info-wrap">
                 <h2 class="bag-title">BBO BAG</h2>
                 <h6 class="breadcrumbs">
-                    <u><a href="/" style="margin:0;">Home</a></u> / <a href="">Shop</a>
+                    <u><a href="/" style="margin:0;" class="third-load">Home</a></u> <div class="fourth-load">/</div> <a class="fifth-load" href="">Shop</a>
                 </h6>
                 <div class="bag-description">
                     <div class="price">
-                        <h3 class="bag-price">
+                        <h3 class="bag-price sixth-load">
                             $199
                         </h3>
                     </div>
-                    <div class="quantity-add-wrap">
-                        <div class="quantity-wrap">
-                            <div class="quantity">1</div>
+                    <div class="quantity-add-wrap second-load">
+                        <div class="quantity-wrap ">
+                            <div class="quantity" id="quantity"></div>
                             <div class="increase-decrease">
                                 <div class="increase" onclick="increaseQuantity()">+</div>
                                 <div class="decrease" onclick="decreaseQuantity()">-</div>
                             </div>
                         </div>
-                        <div class="cart-wrap" onclick="addToCart()">
-                            <a class="cart-add" href="#">add to cart</a>
+                        <div class="cart-parent">
+                            <a class="cart-add cart-wrap">Add to Cart</a>
                         </div>
                     </div>
-                    <div class="bag-text">
+                </div>
+              </div>
+                    <div class="bag-text last-load">
                         <p class="d-title">Description</p>
-                        <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque at aut deserunt numquam illo ipsum minima libero ipsam fugiat sint?</p>
+                        <p class="desc">
+                          <span class="desc-item">Designed in Sydney.</span>
+                          <span class="desc-item">Environmentally Sustainable Vegan Leather.</span>
+                          <span class="desc-item">2 Interior Pockets.</span>
+                          <span class="desc-item">12 months between inception & creation.</span>
+                          <span class="desc-item">10 Made.</span>                          
+                        </p>
+
                     </div>
                     
                 </div>
+                <section class="second-section">
+                  <div class="bag-text view-load">
+                    <p class="d-title ">Size</p>
+                    <p class="desc">
+                      <span class="view-desc-item">
+                        One Size<br/>
+                        Adjustable Vegan Leather Strap
+                      </p>
+      
+                </div>
+                  <div style="margin-top:none !important; margin-bottom: 2em;" class="bag-text view-load">
+                    <p class="d-title ">Shipping</p>
+                    <p class="desc">
+                      <span class="view-desc-item">
+                        In 5-7 working days, your order will be sent out via AUS POST. One business day after payment has been received, orders will be prepared for shipping. An email with the tracking number for your package will be sent to you as soon as we ship your order. One to two hours after receiving the email, kindly check the status of your shipment.                  </span>
+                    </p>
+    
+                </div>
+                
+                <div class="footer">
+                  <div class="links">
+                    <span><a href="/Pages/copy-returns/copy.html">copy</a> </span>
+                    <span><a href="/Pages/copy-returns/returns.html">returns</a></span>
+                    <span><a href="mailto:esotericartstu@gmail.com">email</a></span>
+                    <span><a target="_blank" href="https://instagram.com/eesotericartstudio">social</a></span>
+                  </div>
+                  <h2>
+                    ESOTERIC ART STUDIO.
+                  </h2>
+                  <div class="next-page">
+                    <a class="boring-link" onclick="nextPage()">NEXT</a>
+                  </div>
+                </div>
+                </section>
+                <div class="footer-spacer"></div>
+              </section>
             </div>
+
+
         </div>
+        <div id="shop-section">
+            <div class="shop-nav">
+              <a class="tee-bag-wrap" href="/Pages/tee.html">
+                <div class="tee-wrap" id="tee-wrap">
+
+                </div>
+              </a>
+              <a class="tee-bag-wrap" href="/Pages/bbobag.html">
+                <p>LOADING...</p>
+
+                <div class="bag-wrap c-container" id="bag-wrap">
+                  <p class="img-desc hide">
+                    <span class="img-desc-top">BAG ON PLINTH</span><br/>
+                    <span class="img-desc-bottom">SYDNEY AUS</span><br/>
+                    <span class="shot-by">shot by macsdona © ƎE</span>
+                  </p>
+                  <div class="overlay-blk"></div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="svg-nav fourth-load">
+            <a href="#left"  class='.c-left'>
+              <svg class="c-left" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="White Circle" viewbox="0 0 600 600" width="10" >
+                <circle id="White_circle" fill="#fff" cx="300" cy="300" r="300" />
+              </svg>
+            </a>
+            <a href="#right" class='.c-right'>
+              <svg class="c-right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="White Circle" viewbox="0 0 600 600" width="10" >
+                <circle id="White_circle" fill="#fff" cx="300" cy="300" r="300" />
+              </svg>
+            </a>
+            </div>
+          </div>
     </main>
+
+
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
     <script src="bbobag.js"></script>
 </body>
 </html>

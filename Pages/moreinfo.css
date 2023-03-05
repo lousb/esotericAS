@@ -1,0 +1,254 @@
+*{
+    margin:0;
+    padding:0;
+}
+p{
+  font-family: 'Inter', sans-serif;
+}
+body{
+    overflow-x: hidden;
+}
+.overlay-main-wrap{
+  opacity: 0;
+}
+.esoteric{
+  transform: translateX(37%);
+}
+.studio{
+
+  transform: translateX(-42%);
+}
+.announce p{
+    color:white;
+    margin:10px;
+}
+.main-wrap, .overlay-main-wrap{
+  min-width:100vw;
+  min-height: 100vh;
+  position: absolute;
+  top:0;
+  left:0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap:40px;
+}
+.e-title{
+  font-family: 'Poppins', sans-serif;
+  font-size: 8rem;
+  font-weight: 900;
+  letter-spacing: -10px;
+  text-align: center;
+}
+.test-flex{
+  display: flex;
+  gap: 40px;
+}
+.space{
+  min-height:12.5px;
+}
+.e-subtext{
+  display: flex;
+  justify-content: space-between;
+}
+.subtext{
+  font-weight: 100;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.definition{
+  opacity: 0;
+  margin-top:3rem;
+  max-width: 440px;
+  text-align: center;
+  font-weight: 300;
+}
+section{
+  margin-bottom:5em;
+}
+.definition-wrap{
+  max-width: 440px;
+}
+.nav-item{
+
+  background-image: linear-gradient(
+    to right,
+    black,
+    black 50%,
+    #090909 50%
+  );
+  background-size: 200% 100%;
+  background-position: -100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.5s ease-in-out;
+
+}
+.nav-item:before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  
+}
+.nav-item:hover {
+  background-position: 0;
+  opacity: 1;
+}
+a:hover::before {
+  width: 100%;
+}
+nav{
+  z-index: 3;
+  bottom:0;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  opacity: 0.7;
+}
+.insta{
+  opacity: 0.7;
+}
+.insta:hover{
+  opacity: 1;
+  transition-duration: 500ms;
+}
+.instagram-li{
+  height:2rem;
+
+}
+
+.nav-li{
+  z-index: 3;
+  color:#090909;
+  list-style-type: none;
+  margin-left:15%;
+  flex: 1 1 0;
+  margin-bottom:20px;
+  
+}
+.nav-li a{
+  text-decoration: none;
+  color: #090909;
+  letter-spacing: .15rem;
+}
+.nav-li a:hover{
+  text-decoration: none;
+  color: #090909;
+  transition-duration: 1;
+  
+}
+.nav-li{
+  position: relative;
+}
+.logo{
+  position:fixed;
+  aspect-ratio: 1;
+  height:100px;
+  margin:40px;
+  top:0;
+  left:0;
+  background-image: url(/Images/EsotericLogoRingAllign.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 3;
+}
+.logo:hover{
+  background-image: url(/Images/output-onlinegiftools.gif);
+}
+.bottom-info{
+  margin-bottom: 15em;
+  max-height: 50vh;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 100vh;
+}
+.svg-wrap{
+  width: 50vw;
+  max-height: 7rem;
+}
+.svg-wrap svg{
+  transform: scale(0.8);
+  stroke-dasharray: 4000;
+  stroke-dashoffset: 4000;
+
+}
+#e8F1o43yGLO1{
+  animation: draw 10s forwards;
+}
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.text-wrap{
+  width: 50vw;
+  min-height: 17rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height:100%;
+  margin-top: 4em;
+}
+.desc{
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-top:1em;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  margin-left:10px;
+}
+.desc span{
+padding:2.5px;
+}
+
+@media only screen and (max-width: 900px){
+  .main-wrap{
+    width:100vw;
+    transform: translateY(100px);
+  }
+  .test-flex{
+    flex-direction: column;
+    height: 100vh;
+  }
+  .definition-wrap{
+    scale: 0.8;
+    z-index: 20;
+  }
+  .bottom-info{
+    transform: translateY(50vh);
+    margin-bottom: 35em;
+    flex-direction: column;
+  }
+  .bottom-info > div{
+    width:90%;
+    height: auto;
+    margin:5%;
+  }
+  .svg-wrap{
+    opacity: 0.5;
+    padding-bottom: 100px;
+
+  }
+  nav{
+    border-top:2px solid #090909;
+    background-color: white;
+    opacity: 1;
+    justify-content: center;
+  }
+  .nav-item{
+    font-size: 2.7vw;
+  }
+}
+
+
+

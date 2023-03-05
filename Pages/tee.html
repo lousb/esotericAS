@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
+    <title>Shop - 00001TEE</title>
+    <link rel="stylesheet" href="tee.css"/>
+    <link
+      href="/Images/EsotericLogoRingAllign.svg"
+      rel="icon"
+      media="(prefers-color-scheme: light)"
+    />
+    <link
+      href="/Images/whitelogo.png"
+      rel="icon"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+</head>
+<body class="shop-body">
+
+    <main>
+        <a href="/" class="logo"></a>
+        <div class="nav-wrap ">
+            <nav>
+                <li class="nav-li" id="gallery">
+                  <a class="nav-item" href="#">gallery</a>
+                </li>
+                <li class="nav-li" id="shop" >
+                  <a id="nav-shop" class="nav-item nav-shop" onclick="shopLinkHoverActive()" href="#">shop</a>
+                  <!-- <a id="close-button" class="close-button" onclick="closeShopModal()"> -->
+                  </a>
+                </li>
+                <li class="nav-li white" id="cart" onclick="displayCart()">
+                    <a href="#" class="nav-item">cart</a>
+                    <span class="bracket">(</span><div id="cart-amount"></div> <span class="closing-bracket bracket">)</span>
+                </li>
+                <li class="nav-li white" id="info">
+                  <a href="./moreinfo.html" class="nav-item">more_info</a>
+                </li>
+                <li class="nav-li">
+                  <a class="nav-item insta"  href="https://instagram.com/esoteric.artstudio/"><img class="instagram-li"  src="/assets/pngfind.com-instagram-png-white-2773517.png"></a>
+                </li>
+            </nav>
+            <div id="cart-popup" style="display: none;">
+              <div class="popup-wrap">
+                <h2>Cart</h2>
+                <ul id="cart-items"></ul>
+                <div class="cart-buttons">
+                  <button class="close-cart" onclick="closeCart()">X</button>
+                  <button class="checkout">Checkout</button>
+                </div>
+              </div>
+            </div>
+        </div>
+        
+        <div class="main-wrap" id="top">
+          <section class="first-section" >
+            <div class="bag-information">
+                <h2 class="bag-title">00001TEE</h2>
+                <h6 class="breadcrumbs">
+                    <u><a href="/" style="margin:0;" class="third-load">Home</a></u> <div class="fourth-load">/</div> <a class="fifth-load" href="">Shop</a>
+                </h6>
+                <div class="bag-description">
+                    <div class="price">
+                        <h3 class="bag-price sixth-load">
+                            $88.8
+                        </h3>
+                    </div>
+                    <div class="quantity-add-wrap second-load">
+                        <div class="quantity-wrap">
+                            <div class="quantity" id="quantity"></div>
+                            <div class="increase-decrease">
+                                <div class="increase" onclick="increaseQuantity()">+</div>
+                                <div class="decrease" onclick="decreaseQuantity()">-</div>
+                            </div>
+                        </div>
+                        <div class="cart-parent">
+                            <a class="cart-add cart-wrap">Add to Cart</a>
+                        </div>
+                    </div>
+                    <div class="bag-text second-load">
+                        <p class="d-title">Description</p>
+                        <p class="desc">
+                          <span class="desc-item">Designed in Sydney.</span>
+                          <span class="desc-item">100% Premium 265GSM Cotton.</span>
+                          <span class="desc-item">Subtle Cover Stitch Design.</span>
+                          <span class="desc-item">Woven Labels</span>
+                          <span class="desc-item">10 Made</span>                          
+                        </p>
+
+                    </div>
+                    
+                </div>
+                
+            </div>
+            <section class="second-section">
+              <div class="bag-text view-load">
+                <p class="d-title ">Size</p>
+                <p class="desc">
+                  <span class="view-desc-item">
+                    One Size<br/>
+                    Adjustable Vegan Leather Strap
+                  </p>
+  
+            </div>
+              <div style="margin-top:none !important; margin-bottom: 2em;" class="bag-text view-load">
+                <p class="d-title ">Shipping</p>
+                <p class="desc">
+                  <span class="view-desc-item">
+                    In 5-7 working days, your order will be sent out via AUS POST. One business day after payment has been received, orders will be prepared for shipping. An email with the tracking number for your package will be sent to you as soon as we ship your order. One to two hours after receiving the email, kindly check the status of your shipment.                  </span>
+                </p>
+
+            </div>
+            
+            <div class="sizing-wrap">
+              <div class="sizing-wrap-inner">
+              <div class="Container Container--extraNarrow"><p><strong>NOTE:</strong><em> MEASUREMENTS ARE A GENERAL GUIDE FOR FIT &amp; VARIATIONS EXIST. THERE IS A 1-2" ALLOWANCE ON ALL SIZE MEASUREMENTS.</em><strong><br><br>00001TEE</strong><br>DROPPED SHOULDERS<br>BOXY CUT<br>SLIGHTLY CROPPED LENGTH<br>OVERSIZED ARMHOLE<br>SIZE DOWN FOR TRUE TO SIZE<strong><br></strong></p><br/><br/>
+                <div class="TableWrapper"><table width="100%">
+                <tbody>
+                <tr>
+                <td style="width: 23%; text-align: center;">
+                <h5>(inches)</h5>
+                </td>
+                <td style="width: 13%; text-align: center;"><strong>S</strong></td>
+                <td style="width: 14%; text-align: center;"><strong>M</strong></td>
+                <td style="width: 10.9625%; text-align: center;"><strong>L</strong></td>
+                <td style="width: 12.0375%; text-align: center;"><strong>XL</strong></td>
+                <td style="width: 12%; text-align: center;"><strong>2XL</strong></td>
+                </tr>
+                <tr>
+                <td style="width: 23%; text-align: center;">
+                <h5><strong>CHEST</strong></h5>
+                </td>
+                <td style="width: 13%; text-align: center;">24</td>
+                <td style="width: 14%; text-align: center;">&nbsp;25.5</td>
+                <td style="width: 10.9625%; text-align: center;">27</td>
+                <td style="width: 12.0375%; text-align: center;">28</td>
+                <td style="width: 12%; text-align: center;">29</td>
+                </tr>
+                <tr>
+                <td style="width: 23%; text-align: center;">
+                <h5><strong>LENGTH</strong></h5>
+                </td>
+                <td style="width: 13%; text-align: center;">26.5</td>
+                <td style="width: 14%; text-align: center;">27</td>
+                <td style="width: 10.9625%; text-align: center;">27.5</td>
+                <td style="width: 12.0375%; text-align: center;">28</td>
+                <td style="width: 12%; text-align: center;">28.5</td>
+                </tr>
+                <tr>
+                <td style="width: 23%; text-align: center;">
+                <h5><strong>SHOULDER</strong></h5>
+                </td>
+                <td style="width: 13%; text-align: center;">23</td>
+                <td style="width: 14%; text-align: center;">24</td>
+                <td style="width: 10.9625%; text-align: center;">25</td>
+                <td style="width: 12.0375%; text-align: center;">26</td>
+                <td style="width: 12%; text-align: center;">27</td>
+                </tr>
+                </tbody>
+                </table></div>
+                <strong><img src="./../Images/Tee-sizing.png" style="margin-top:5em;" alt="" width="" height=""></strong></div>
+              </div>
+            </div>
+            
+            <div class="footer">
+              <div class="links">
+                <span><a href="/Pages/copy-returns/copy.html">copy</a> </span>
+                <span><a href="/Pages/copy-returns/returns.html">returns</a></span>
+                <span><a href="mailto:esotericartstu@gmail.com">email</a></span>
+                <span><a target="_blank" href="https://instagram.com/eesotericartstudio">social</a></span>
+              </div>
+              <h2>
+                ESOTERIC ART STUDIO.
+              </h2>
+              <div class="next-page">
+                <a class="boring-link" onclick="nextPage()">NEXT</a>
+              </div>
+            </div>
+            </section>
+            <div class="footer-spacer"></div>
+          </section>
+        </div>
+        <div id="shop-section">
+            <div class="shop-nav">
+              <a class="tee-bag-wrap" href="/Pages/tee.html">
+                <div class="tee-wrap" id="tee-wrap">
+
+                </div>
+              </a>
+              <a class="tee-bag-wrap " href="/Pages/bbobag.html">
+                <p>LOADING...</p>
+
+                <div class="bag-wrap c-container" id="bag-wrap">
+                  <p class="img-desc hide">
+                    <span class="img-desc-top">BAG ON PLINTH</span><br/>
+                    <span class="img-desc-bottom">SYDNEY AUS</span><br/>
+                    <span class="shot-by">shot by macsdona © ƎE</span>
+                  </p>
+                </div>
+                <div class="overlay-blk"></div>
+              </a>
+            </div>
+          </div>
+          <div class="svg-nav fourth-load">
+            <a href="#left"  class='.c-left'>
+              <svg class="c-left" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="White Circle" viewbox="0 0 600 600" width="10" >
+                <circle id="White_circle" fill="#fff" cx="300" cy="300" r="300" />
+              </svg>
+            </a>
+            <a href="#right" class='.c-right'>
+              <svg class="c-right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="White Circle" viewbox="0 0 600 600" width="10" >
+                <circle id="White_circle" fill="#fff" cx="300" cy="300" r="300" />
+              </svg>
+            </a>
+            </div>
+          </div>
+    </main>
+
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
+    <script src="tee.js"></script>
+</body>
+</html>
