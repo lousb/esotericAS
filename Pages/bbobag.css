@@ -930,8 +930,12 @@ section{
     text-align: center;
     width:100%;
   }
+  .bracket, #cart-amount{
+    scale:0.8;
+  }
 
   nav{
+    padding-inline:20px;
     border-top:2px solid #090909;
     background-color: white;
     opacity: 1;
