@@ -9,21 +9,12 @@ var init = function(){
       width: 1e9,
       height: 1e9
     });
+
+
       
-    var gui = new dat.GUI();
-    gui.add(ps, 'ptlGap').min(0).max(5).step(1).onChange(function(){
-      ps.init(true);
-    });
-    gui.add(ps, 'ptlSize').min(1).max(5).step(1).onChange(function(){
-      ps.init(true);
-    });
-    gui.add(ps, 'restless');
-    gui.addColor(ps, 'color').onChange(function(value){
-      ps.monochrome = true;
-      ps.setColor(value);
-        ps.init(true);
-    });
-    
+
+
+
     
     (window.addEventListener
      ? window.addEventListener('click', function(){ps.init(true)}, false)
@@ -43,6 +34,9 @@ var init = function(){
   (window.addEventListener
     ? window.addEventListener('load', initParticleSlider, false)
     : window.onload = initParticleSlider);
+
+
+    
 
 //Overlay Functionality
 var slide = [];
@@ -120,6 +114,13 @@ modalActive=false;
 //handles active hover status of nav 'shop' link
 function shopLinkHoverActive(){
   if(modalActive===false){
+    let animation = anime({
+      targets: '.nav-title',
+      delay: anime.stagger(300 ,{start: 300}), 
+      duration: 2000,
+      opacity: 1, 
+      translateY: -20,
+    });  
     document.querySelector('#shop-section').setAttribute("style", "z-index:3;display:block;pointer-events:all")
     shopLink.appendChild(closeButton);
     document.querySelector('#nav-shop').setAttribute("style", "opacity:0; pointer-events:all;")
@@ -136,4 +137,30 @@ closeButton.onclick = function () {
   closeButton.remove();
   setTimeout(() => {    document.querySelector('#nav-shop').setAttribute("style", "opacity:1; pointer-events:all;") }, 200);
   setTimeout(() => { modalActive = false }, 300);
+}
+
+function nextPage(link){
+  let animation = anime({
+    targets: '.nav-title',
+    duration: 2000,
+    opacity: 0
+  });   
+
+  if(link === 'bbobag.html'){
+    anime({
+      targets: '.tee-wrap',
+      duration: 2000,
+      opacity: 0
+    });   
+  }else{
+    anime({
+      targets: '.bag-wrap',
+      duration: 2000,
+      opacity: 0
+    });  
+  }
+  
+  setTimeout(()=>{
+    window.location.href = "/Pages/" + link;
+  }, 500)
 }
