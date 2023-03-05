@@ -919,7 +919,6 @@ section{
     background-position-y: -275px;
   }
   .nav-li{
-    width:25vw;
     display: flex;
     justify-content: center;
   }
