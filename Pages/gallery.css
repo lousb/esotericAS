@@ -2,26 +2,27 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    max-height: 100vh;
+    margin:0;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+
+  
+}
+html{
+  scroll-behavior: smooth;
 }
 main{
-    margin:10%;
-    height:80vh;
-    width:80vw;
     display: flex;
     justify-content: start;
     align-items: center;
     flex-direction: column;
 }
-h1{
-    font-family: 'Inter', sans-serif;
-    font-size: 2.6em;
-    text-transform: uppercase;
-}
+
 p{
     font-family: 'Inter', sans-serif;
     padding-bottom: 50px;
 }
+
 .logo{
     position:fixed;
     aspect-ratio: 1;
@@ -29,7 +30,7 @@ p{
     margin:40px;
     top:0;
     left:0;
-    background-image: url(/Images/EsotericLogoRingAllign.svg);
+    background-image: url(/Images/whitelogo.png);
     background-size: contain;
     background-repeat: no-repeat;
     z-index: 3;
@@ -193,17 +194,6 @@ p{
   margin-inline: 10px;
   
 }
-.more-info-transition{
-  position: fixed;
-  top:0;
-  left:0;
-  width:100vw;
-  height:100vw;
-  background-color: white;
-  z-index: 500;
-  pointer-events: none;
-  opacity: 0;
-}
 .blur{
   filter: blur(7px);
   -webkit-transition : -webkit-filter 1000ms ease
@@ -261,6 +251,11 @@ p{
   padding-right:100px;
 
   
+}
+.images-first-section *{
+  font-family: 'Inter', sans-serif;
+  font-size: 1.5em;
+  margin-top:1em;
 }
 .checkout{
   font-size: 5em !important;
@@ -321,7 +316,7 @@ p{
 .shop-nav{
   width: 100vw;
   height:100vh;
-  position: absolute;
+  position: fixed;
   top:0;
   left:0;
   display: block;
@@ -372,7 +367,6 @@ a{
   background-image: url(./../Images/bag-on-pillar.webp);
   background-size: 100%;
   background-repeat: no-repeat;
-  background-position-y: -9em ;
 }
 .nav-view{
   font-family: 'Inter', sans-serif;
@@ -449,6 +443,9 @@ a{
   display: none;
   pointer-events: none;
 }
+section{
+  scroll-snap-align: start;
+}
 
 #close-button{
   margin-left:1em;
@@ -471,10 +468,99 @@ a{
 .nav-li{
   position: relative;
 }
+.announce{
+  width:100%;
+  display:flex;
+  height:1em;
+  background-color: red;
+  justify-content: center;
+  align-items: center;
 
+}
+.announce p{
+  color:white;
+  margin:10px;
+}
 .shop-body{
   background-image: url(/Images/bag.png);
 }
+
+.firstscreen{
+  width:100vw;
+  height:100vh;
+  max-height:100vh;
+  background-image: url('./../Images/gallery/coverimage2.png');
+  background-position: center;
+  background-size: cover;
+  padding:2em;
+}
+.images{
+
+  height:100vh;
+
+}
+h2{
+  font-family: 'Inter', sans-serif;
+  font-size: 12.5em;
+  text-transform: uppercase;
+}
+.title, .intro-title{
+  padding:0;
+  margin:0;
+  margin-left:10%;
+  letter-spacing: -10px;
+  color:white;
+  position: relative;
+  z-index:3;
+}
+.intro-text{
+  padding-left: 40px;
+  z-index: 5;
+  pointer-events: none;
+}
+.intro-title{
+  letter-spacing: -3px;
+  font-weight: 400;
+  margin-top:0;
+  padding-left: 20px;
+  font-size: 2em;
+  margin-bottom:20vh;
+}
+.copy-text{
+  text-align: right;
+  scale: 0.8;
+}
+.more{
+  margin:0;
+}
+.first{
+  margin-bottom: 0;
+}
+.first-screen-text{
+  width:90%;
+  display: flex;
+  justify-content: space-between;
+  margin-inline: 5%;
+}
+.first-screen-overlay{
+  background-image: url(./../Images/gallery/coverimage.png);
+  background-size: cover;
+  background-position: center;
+  transform: translateY(32px);
+  scale:1.1;
+  pointer-events: none;
+  width:100vw;
+  height:100vh;
+  position: absolute;
+  top:0;
+}
+.baby-keem{
+  text-transform: uppercase;
+  font-size: 1em;
+  opacity: 0.8;
+  color:#282828;
+}
+
 @media only screen and (max-width: 700px){
   .shop-nav{
     flex-direction: column;
@@ -542,3 +628,91 @@ a{
   mix-blend-mode: difference;
 
 }
+.images-first-section{
+  z-index: 10;
+  position: relative;
+  display: flex;
+  height: 50vh;
+  width: 80vw;
+  padding:10vw;
+  justify-content: space-between;
+}
+.gallery-images{
+  opacity: 0;
+  padding-top:2em;
+  width:80vw;
+  margin-inline: 10vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.image-wrap{
+  max-width:38vw;
+  display: block;
+  margin-bottom: 3.5em;
+}
+.image-wrap > img{
+  background-color: lightgray;
+  width:38vw;
+  height:auto;
+  object-fit: cover;
+
+}
+.gallery-9{
+  max-width:80vw;
+}
+.gallery-9 > img{
+  width:80vw;
+}
+.more-info-transition{
+  position: fixed;
+  top:0;
+  left:0;
+  width:100vw;
+  height:100vw;
+  background-color: white;
+  z-index: 500;
+  pointer-events: none;
+  opacity: 0;
+}
+@media only screen and (max-width: 950px){
+  .images-first-section{
+    flex-direction: column;
+    height:120vh;
+    justify-content: start;
+  }
+  h2{
+    font-size:4em;
+  }
+  .firstscreen{
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+  }
+  .title{
+    margin-bottom: 10vh;
+  }
+  .image-wrap{
+    max-width: 80vw;
+  }
+  .image-wrap > img{
+    width:80vw;
+  }
+  .first-screen-text{
+    flex-direction: column-reverse;
+    justify-content: start;
+    
+  }
+  .first-screen-text > div{
+    padding:0;
+    padding-inline:10%;
+    width:80%;
+    height:20vh;
+  }
+  .intro-title{
+    font-size:1.3em;
+    text-align: right;
+  }
+
+}
+

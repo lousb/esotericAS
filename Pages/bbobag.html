@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K26EZ38MJZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-K26EZ38MJZ');
+</script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
@@ -28,10 +37,10 @@
         <div class="nav-wrap ">
             <nav>
                 <li class="nav-li" id="gallery">
-                  <a class="nav-item" href="#">gallery</a>
+                  <a class="nav-item" href="/Pages/gallery.html">gallery</a>
                 </li>
                 <li class="nav-li" id="shop" >
-                  <a id="nav-shop" class="nav-item nav-shop" onclick="shopLinkHoverActive()" href="#">shop</a>
+                  <a id="nav-shop" class="nav-item nav-shop" onclick="nextPage()">00001TEE</a>
                   <!-- <a id="close-button" class="close-button" onclick="closeShopModal()"> -->
                   </a>
                 </li>
@@ -39,31 +48,14 @@
                     <a href="#" class="nav-item">cart</a>
                     <span class="bracket">(</span><div id="cart-amount"></div> <span class="closing-bracket bracket">)</span>
                 </li>
-                <li class="nav-li white" id="info">
-                  <a href="./moreinfo.html" class="nav-item">more_info</a>
+                <li class="nav-li" id="info">
+                  <a onclick="moreInfoTransition()" class="nav-item">more_info</a>
                 </li>
                 <li class="nav-li instagram">
-                  <a class="nav-item insta"  href="https://instagram.com/esoteric.artstudio/"><img class="instagram-li"  src="/assets/pngfind.com-instagram-png-white-2773517.png"></a>
+                  <a class="nav-item insta"  href="https://instagram.com/esoteric.artstudio/"><img class="instagram-li"  src="./../Images/pngfind.com-instagram-png-white-2773517.png"></a>
                 </li>
             </nav>
-            <div id="cart-popup" style="display: none;">
-              <div class="popup-wrap">
-
-                <ul id="cart-items"></ul>
-                <div class="cart-buttons">
-                  <button class="close-cart" onclick="closeCart()">X</button>
-                  
-                  
-                  <form id="checkoutForm" method="post" action="./../srvr/server.php">
-                    <input type="hidden" name="data" id="checkout_data">
-                    <button class="checkout" type="button" id="checkout-button" onclick="checkout()">Checkout</button>
-                  </form>
-
-                  
-                  
-                </div>
-              </div>
-            </div>
+           
         </div>
         
         <div class="main-wrap" id="top">
@@ -77,7 +69,12 @@
                 <div class="bag-description">
                     <div class="price">
                         <h3 class="bag-price sixth-load">
-                            $199
+                            <span>$</span>
+                            <span>1</span>
+                            <span>8</span>
+                            <span>8</span>
+                            <span>.</span>
+                            <span>8</span>
                         </h3>
                     </div>
                     <div class="quantity-add-wrap second-load">
@@ -163,7 +160,6 @@
                     <span class="img-desc-bottom">SYDNEY AUS</span><br/>
                     <span class="shot-by">shot by macsdona © ƎE</span>
                   </p>
-                  <div class="overlay-blk"></div>
                 </div>
               </a>
             </div>
@@ -180,6 +176,48 @@
               </svg>
             </a>
             </div>
+          </div>
+          <section class="test-cart">
+            <div class="cart-left tcc">
+              <div class="cart-information">
+                <div class="headers">
+                  <div class="header-product">PRODUCT</div>
+                  <div class="header-quantity">QUANTITY</div>
+                  <div class="header-price">PRICE</div>
+                </div>
+                <div class="cart-products">
+                
+                </div>
+                <div class="line">
+                  <div class="x">x</div>
+                </div>
+              </div>
+            </div>
+            <div class="cart-right tcc">
+              <div class="confirm-cart-wrap">
+                <div class="total-wrap">
+                  <span>TOTAL</span>
+                  <span class="total"></span>
+                  <div class="line-top-cart"></div>
+                </div>
+                <div class="shipping-wrap">
+                  <span>SHIPPING</span>
+                  <span>FREE</span>
+                  <div class="line-top-cart"></div>
+                </div>
+                <div class="checkout-wrap">
+                  <form id="checkoutForm" method="post" action="./../srvr/server.php">
+                    <input type="hidden" name="data" id="checkout_data">
+                    <button class="checkout" type="button" id="checkout-button" onclick="checkout()">CHECKOUT</button>
+                  </form>
+                </div>
+
+
+              </div>
+            </div>
+          </section>
+          <div class="transitions">
+
           </div>
     </main>
 
