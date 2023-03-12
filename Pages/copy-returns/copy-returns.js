@@ -43,3 +43,26 @@ closeButton.onclick = function () {
 
 //spotlight shop nav
 
+
+function moreInfoTransition(){
+  const moreInfoTransitionDiv = document.createElement('div');
+  moreInfoTransitionDiv.classList.add('more-info-transition');
+
+  const transitionsContainer = document.querySelector('.transitions');
+  transitionsContainer.appendChild(moreInfoTransitionDiv);
+
+  anime({
+    targets: '.more-info-transition',
+    opacity: 1,
+    duration: 800,
+    easing: 'linear'
+  });
+
+  setTimeout(() => {
+    window.location.href = '/Pages/moreinfo.html';
+  }, 1000);
+  
+}
+
+
+

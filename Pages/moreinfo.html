@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K26EZ38MJZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-K26EZ38MJZ');
+</script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
@@ -25,21 +34,22 @@
         <a href="/" class="logo"></a>
         <nav>
             <li class="nav-li" id="gallery">
-              <a class="nav-item" href="#">gallery</a>
+              <a class="nav-item" href="/Pages/gallery.html">gallery</a>
             </li>
             <li class="nav-li" id="shop" >
               <a id="nav-shop" class="nav-item nav-shop" onclick="shopLinkHoverActive()" href="#">shop</a>
               <!-- <a id="close-button" class="close-button" onclick="closeShopModal()"> -->
               </a>
             </li>
-            <li class="nav-li" id="cart">
-              <a href="#" class="nav-item">cart</a>
+            <li class="nav-li white" id="cart" onclick="displayCart()">
+                <a href="#" class="nav-item">cart</a>
+                <span class="bracket">(</span><div id="cart-amount"></div> <span class="closing-bracket bracket">)</span>
             </li>
             <li class="nav-li" id="info">
-              <a href="#" class="nav-item">more_info</a>
+              <a onclick="moreInfoTransition()" class="nav-item">more_info</a>
             </li>
             <li class="nav-li">
-              <a class="nav-item insta"  href="https://instagram.com/esoteric.artstudio/"><img class="instagram-li"  src="/assets/pngfind.com-instagram-png-white-2773517.png"></a>
+              <a class="nav-item insta"  href="https://instagram.com/esoteric.artstudio/"><img class="instagram-li"  src="./../Images/pngfind.com-instagram-png-white-2773517.png"></a>
             </li>
         </nav>
         <div class="main-wrap">
@@ -122,11 +132,84 @@
                         <p class="adjective subtext">noun</p>
                     </div>
                     <p class="definition">'a room where an artist, photographer, sculptor, etc. works'</p>
-                    
                 </div>
-    
             </div>
         </div>
+        <section class="test-cart">
+            <div class="cart-left tcc">
+              <div class="cart-information">
+                <div class="headers">
+                  <div class="header-product">PRODUCT</div>
+                  <div class="header-quantity">QUANTITY</div>
+                  <div class="header-price">PRICE</div>
+                </div>
+                <div class="cart-products">
+                
+                </div>
+                <div class="line">
+                  <div class="x">x</div>
+                </div>
+              </div>
+            </div>
+            <div class="cart-right tcc">
+              <div class="confirm-cart-wrap">
+                <div class="total-wrap">
+                  <span>TOTAL</span>
+                  <span class="total"></span>
+                  <div class="line-top-cart"></div>
+                </div>
+                <div class="shipping-wrap">
+                  <span>SHIPPING</span>
+                  <span>FREE</span>
+                  <div class="line-top-cart"></div>
+                </div>
+                <div class="checkout-wrap">
+                  <form id="checkoutForm" method="post" action="./../srvr/server.php">
+                    <input type="hidden" name="data" id="checkout_data">
+                    <button class="checkout" type="button" id="checkout-button" onclick="checkout()">CHECKOUT</button>
+                  </form>
+                </div>
+
+
+              </div>
+            </div>
+          </section>
+          <section id="shop-section">
+            <div class="shop-nav">
+              <a class="tee-bag-wrap" href="/Pages/tee.html">
+                <div class="tee-wrap" id="tee-wrap">
+                  <h2 class="tee-title nav-title">
+                    <span class="anime-letter">0</span>
+                    <span class="anime-letter">0</span>
+                    <span class="anime-letter">0</span>
+                    <span class="anime-letter">0</span>
+                    <span class="anime-letter">1</span>
+                    <div class="anime-space"></div>
+                    <span class="anime-letter">T</span>
+                    <span class="anime-letter">E</span>
+                    <span class="anime-letter">E</span>
+                  </h2>
+      
+                </div>
+              </a>
+              <a class="tee-bag-wrap" href="/Pages/bbobag.html">
+                <div class="bag-wrap" id="bag-wrap">
+                  <h2 class="bag-title nav-title">
+                    <span class="anime-letter">B</span>
+                    <span class="anime-letter">B</span>
+                    <span class="anime-letter">O</span>
+                    <div class="anime-space"></div>
+                    <span class="anime-letter">B</span>
+                    <span class="anime-letter">A</span>
+                    <span class="anime-letter">G</span>
+                  </h2>
+                </div>
+              </a>
+            </div>
+          </section>
+          <div class="transitions">
+
+          </div>
     </main>
 
     <script src="https://js.stripe.com/v3/"></script>

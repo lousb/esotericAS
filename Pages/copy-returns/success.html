@@ -33,16 +33,20 @@
 <body>
     <a href="/" class="logo"></a>
     <main>
-        <h1>Copyright and Intellectual Property Policy:</h1>
+      <br/><br/>
+        <h1>ORDER NUMBER:</h1>
+        <h1 class="order-number"></h1>
         <p>
-            The materials on the Esoteric Art Studio website, including images, text, graphics, logos, videos, and code, are either owned by or licensed to Esoteric Art Studio and are protected by copyright and trademark laws. You may not use any of the materials on this website without our prior written permission.
-            <br/>            <br/>
-            The BBO BAG and 0001TEE designs are proprietary to Esoteric Art Studio and are protected by copyright and trademark laws. You may not use these designs without our prior written permission.
-            <br/>            <br/>
-            If you believe that any material on this website infringes on your copyright or intellectual property rights, please contact us at <a style="color: black;" href="mailto:esotericartstu@gmail.com">esotericartstu@gmail.com</a> with a description of the material and a statement that you have a good-faith belief that the use of the material is not authorized by the copyright or intellectual property owner, its agent, or the law.
-            <br/>            <br/>
-            We take copyright and intellectual property rights seriously, and we will respond to all valid requests as soon as possible.
-            <br/>            <br/>
+          We will email you in 2-3 business days with tracking for your order.
+          <br/><br/>
+          We hope you like your order as much as we liked making it for you.
+          <br/><br/><br/>
+          <a style="color:black" href="/"><b>BACK</b></a>
+          <br/><br/>
+          <a style="color:black" href="https://instagram.com/eesotericartstudio"><b>INSTAGRAM</b></a>
+          <br/><br/>
+          <a style="color:black" href="mailto:ESOTERICARTSTU@GMAIL.COM"><b>ESOTERICARTSTU@GMAIL.COM</b></a>
+          
         </p>
         <nav>
             <div class="nav-wrap">
@@ -100,7 +104,17 @@
     <div class="transitions">
 
     </div>
+    <script>
+      // Get a reference to the HTML element with class "order-number"
+  const orderNumberElem = document.querySelector('.order-number');
 
+  // Generate a random number between 100 and 999
+  const randomNum = Math.floor(Math.random() * 900) + 100;
+
+  // Set the text content of the element to the random number
+  orderNumberElem.textContent = randomNum;
+
+    </script>
     <script src="https://js.stripe.com/v3/"></script>
     <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
     <script src="copy-returns.js"></script>
