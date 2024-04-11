@@ -26,11 +26,17 @@ $cart = json_decode($_POST['data']);
 
 $lineItems = [];
 
+$metadata = [];
+
 foreach ($cart as $item) {
   $lineItems[] = [
     'price' => $item->priceId,
-    'quantity' => $item->quantity,
+    'quantity' => $item->quantity
   ];
+
+  if (isset($item->size)) {
+    $metadata['Size'] = $item->size;
+  }
 }
 
 $checkout_session = \Stripe\Checkout\Session::create([
@@ -41,6 +47,7 @@ $checkout_session = \Stripe\Checkout\Session::create([
   'automatic_tax' => [
     'enabled' => true,
   ],
+  'metadata' => $metadata // set metadata at the root level
 ]);
 
 

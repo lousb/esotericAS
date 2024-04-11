@@ -91,12 +91,25 @@
                                 <div class="increase" onclick="increaseQuantity()">+</div>
                                 <div class="decrease" onclick="decreaseQuantity()">-</div>
                             </div>
+                            <div class="dropdown">
+                              <button class="dropbtn">Size</button>
+                              <div class="dropdown-content">
+                                <a href="#">X-SMALL</a>
+                                <a href="#">SMALL</a>
+                                <a href="#">MEDIUM</a>
+                                <a href="#">LARGE</a>
+                              </div>
+                            </div>
+                          
                         </div>
+
                         <div class="cart-parent">
                             <a class="cart-add cart-wrap">Add to Cart</a>
                         </div>
                     </div>
+                    <p class="size-not-selected"></p>
                     <div class="bag-text second-load">
+
                         <p class="d-title">Description</p>
                         <p class="desc">
                           <span class="desc-item">Designed in Sydney.</span>
@@ -275,9 +288,11 @@
             </div>
           </section>
           <div class="transitions">
-
+            
           </div>
     </main>
+    <div class="main-announcement"><h3>Demonstration Build: Products non purchasable</h3></div>
+
 
     <script src="https://js.stripe.com/v3/"></script>
     <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>

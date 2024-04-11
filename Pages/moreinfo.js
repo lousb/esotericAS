@@ -196,6 +196,15 @@ function displayCart() {
 
       cartItems.appendChild(item);
 
+      if(cart[i].size != undefined){
+        let sizeDiv = document.createElement('div');
+        sizeDiv.classList.add('cart-size');
+
+        sizeDiv.innerHTML = '<p class="opa-product">'+cart[i].size+'</p>';
+
+        cartItems.appendChild(sizeDiv);
+      }
+
 
     }
 
@@ -324,7 +333,15 @@ function decreaseCart(name) {
   }
 }
 
-document.querySelector('.x').addEventListener("click", ()=>{
+const button = document.querySelector('.x');
+let isAnimating = false;
+
+button.addEventListener("click", ()=>{
+  if (isAnimating) return;
+  isAnimating = true;
+
+  // Rest of the animation code
+
 
   let tl13 = anime.timeline({
     easing: 'easeOutExpo', 
@@ -385,10 +402,13 @@ document.querySelector('.x').addEventListener("click", ()=>{
   })
 
 
+  // Prevent the animation function from being called again for 3 seconds
+  setTimeout(() => {
+    isAnimating = false;
+  }, 3000);
+});
 
-  
-}
-);  
+ 
 
 function updateCartAmount() {
   // get the cart amount display element

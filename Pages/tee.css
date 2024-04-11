@@ -199,6 +199,7 @@ body{
 }
 .cart-wrap{
     margin: 0;
+    
 }
 .quantity{
     font-family: 'Inter', sans-serif;   
@@ -223,6 +224,7 @@ body{
     padding-inline: 30px;
     transition:all 500ms ease-in-out;
     transition-delay: 50ms;
+    
 
   }
   .cart-add::after{
@@ -275,20 +277,65 @@ body{
 
  
   }
-  @media (hover: hover){
-    .cart-parent:hover{
-      transform:scalex(2.3) scaley(4) translateX(-35px) translateY(-10px);
+
+  .dropbtn {
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 2px;
+    font-size: 0.7rem;
+
+
+    background-color: white;
+    color: black;
+    padding: 10px;
+    padding-inline: 25px;
+    border: none;
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    border-left: 2px solid black;
+    height:100%;
+
+  }
   
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    min-height: 50px;
+  }
   
-    }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    border: 2px solid black;
+    min-width: 160px;
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    background-color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #f1f1f1}
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown:hover .dropbtn {
+    background-color: white;
+    border: none;
+    border-left: 2px solid black;
+    border-bottom: none;
   }
 
   .cart-parent:hover > a{
-    text-shadow:
-    1px 0 0 black,
-    1.5px 0 0 black,
-    1.5px 0 0 black,
-    1px 0 0 black;
+  
     
     -webkit-transition: all .5s linear;
     -moz-transition: all .5s linear;
@@ -301,7 +348,7 @@ body{
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    min-height: 41px;
+    min-height: 51px;
 }
 .increase-decrease,
 .increase-decrease *{
@@ -364,6 +411,15 @@ nav{
 
 .pointer-events-none{
   pointer-events: none;
+}
+.cart-size{
+  font-family: 'Inter', sans-serif;
+
+}
+.cart-size p{
+  opacity: 0;
+  font-size: 0.8em ;
+  color:white;
 }
 
 .nav-wrap{
@@ -958,7 +1014,7 @@ section{
   top:0;
   left:0;
   width:100vw;
-  height:100vw;
+  height:250vw;
   background-color: white;
   z-index: 500;
   pointer-events: none;
@@ -1020,9 +1076,16 @@ section{
     overflow: auto;
     overflow-x: hidden;
   }
+  .cart-size p{
+    font-size: 0.8em ;
+    color:black;
+  }
+
+
   .sizing-wrap{
     width:100%;
-    scale:0.8;
+    scale:0.6;
+    height: 80vh;
   }
   .footer-spacer{
     height:10em;
@@ -1132,7 +1195,7 @@ section{
   .second-section{
     margin-top:2em;
     margin: 2em;
-    margin-bottom:90vh;
+    margin-bottom:100vh;
   }
   .bag-text{
     min-width:auto;
@@ -1140,6 +1203,10 @@ section{
   }
   .desc span{
     margin-bottom: 0.8em;
+  }
+  .nav-li{
+    margin-left:10%;
+    font-size: small;
   }
 }
 @media only screen and (max-width:700px){
@@ -1150,6 +1217,17 @@ section{
 @media only screen and (max-width:550px){
   section{
     display: block;
+  }
+}
+@media only screen and (max-width:460px){
+  .dropbtn, .quantity-wrap{
+    border-right: none;
+  }
+
+  .dropdown:hover .dropbtn {
+    background-color: white;
+    border: 2px solid black;
+    border-bottom: none;
   }
 }
 @media only screen and (max-width: 347px){
@@ -1223,3 +1301,25 @@ section{
 
 
 
+
+
+.main-announcement{
+  position: fixed;
+  top:0;
+  
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  mix-blend-mode: difference;
+  z-index: 9999;
+}
+.main-announcement h3{
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 0.9em;
+  width: max-content;
+  background-color: white;
+  padding: 10px 30px 10px 30px;
+  margin: 0;
+  border-radius: 0px 0px 10px 10px;
+}

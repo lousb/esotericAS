@@ -18,6 +18,7 @@
     padding:0;
 }
 
+
 body{
     overflow-x: hidden;
     scroll-behavior:smooth;
@@ -255,13 +256,6 @@ letter-spacing: -10px;
 
  
   }
-  @media (hover: hover){
-    .cart-parent:hover{
-      transform:scalex(2.3) scaley(4) translateX(-35px) translateY(-10px);
-  
-  
-    }
-  }
 
   .cart-parent:hover > a{
     text-shadow:
@@ -281,7 +275,7 @@ letter-spacing: -10px;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    min-height: 41px;
+    min-height: 50px;
 }
 .increase-decrease,
 .increase-decrease *{
@@ -910,9 +904,7 @@ section{
 .shipping-wrap{
   position: relative;
 }
-.total-wrap{
 
-}
 .line{
   position:absolute;
   width: 0%;
@@ -940,7 +932,7 @@ section{
   top:0;
   left:0;
   width:100vw;
-  height:100vw;
+  height:250vw;
   background-color: white;
   z-index: 500;
   pointer-events: none;
@@ -1166,6 +1158,10 @@ section{
   .desc span{
     margin-bottom: 0.8em;
   }
+  .nav-li{
+    margin-left:10%;
+    font-size: small;
+  }
 }
 @media only screen and (max-width: 500px){
   .product-product{
@@ -1181,3 +1177,23 @@ section{
 
 
 
+.main-announcement{
+  position: fixed;
+  top:0;
+  
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  mix-blend-mode: difference;
+  z-index: 9999;
+}
+.main-announcement h3{
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 0.9em;
+  width: max-content;
+  background-color: white;
+  padding: 10px 30px 10px 30px;
+  margin: 0;
+  border-radius: 0px 0px 10px 10px;
+}

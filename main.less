@@ -14,6 +14,7 @@
 }
 
 html, body {
+  
   width: 100vw;
   height: 100vh;
   margin: 0;
@@ -343,16 +344,17 @@ a{
   text-transform: uppercase;
   font-weight: bold;
   line-height: 0.8em;
-  font-size: 6em;
-  letter-spacing: -0.17em;
+  font-size: 10vw;
+  letter-spacing: -0.1em;
   color:white;
   mix-blend-mode: difference;
 
 }
 .black{
 
-  padding-top: 0.3em;
-  font-size: 6em;
+  
+font-size: 10vw;
+letter-spacing: -0.1em;
   color:black;
   mix-blend-mode: color-burn;
   opacity: 0.5;
@@ -392,7 +394,11 @@ a{
     width:100%;
   }
   nav{
-    transform:scale(0.8);
+    transform: translateY(-8vh) translateX(20px);
+  }
+  .nav-li{
+    margin-left:10%;
+    font-size: small;
   }
   canvas{
     min-width: 100%;
@@ -596,13 +602,32 @@ a{
   top:0;
   left:0;
   width:100vw;
-  height:100vw;
+  height:250vw;
   background-color: white;
   z-index: 500;
   pointer-events: none;
   opacity: 0;
 }
-
+.main-announcement{
+  position: fixed;
+  top:0;
+  
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  mix-blend-mode: difference;
+z-index: 9999;
+}
+.main-announcement h3{
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 0.9em;
+  width: max-content;
+  background-color: white;
+  padding: 10px 30px 10px 30px;
+  margin: 0;
+  border-radius: 0px 0px 10px 10px;
+}
 
 @media only screen and (max-width: 500px){
   .product-product{
@@ -610,6 +635,7 @@ a{
     letter-spacing: -5px;
   }
 }
+
 
 
 @media only screen and (max-width: 950px){

@@ -282,7 +282,7 @@ padding:2.5px;
   top:0;
   left:0;
   width:100vw;
-  height:100vw;
+  height:250vw;
   background-color: white;
   z-index: 500;
   pointer-events: none;
@@ -532,6 +532,10 @@ padding:2.5px;
   .cart-right{
     background-color: white;
   }
+  .nav-li{
+    margin-left:10%;
+    font-size: small;
+  }
 
 }
 .shop-nav{
@@ -704,9 +708,6 @@ a{
   .tee-wrap, .bag-wrap{
     width:100%;
   }
-  nav{
-    transform:scale(0.8);
-  }
   canvas{
     min-width: 100%;
   }
@@ -732,4 +733,35 @@ a{
   display: inline-block;
 
 }
+.pointer-events-none{
+  pointer-events: none;
+}
+@media only screen and (max-width: 700px){
+  .nav-title {
+      margin-top: 5%;
 
+  }
+  .nav-title >span{
+    font-size: 3.5rem !important;
+  }
+}
+.main-announcement{
+  position: fixed;
+  top:0;
+  
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  mix-blend-mode: difference;
+  z-index: 9999;
+}
+.main-announcement h3{
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 0.9em;
+  width: max-content;
+  background-color: white;
+  padding: 10px 30px 10px 30px;
+  margin: 0;
+  border-radius: 0px 0px 10px 10px;
+}

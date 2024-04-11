@@ -37,8 +37,10 @@ let quantityDiv = document.getElementById('quantity');
 quantityDiv.innerHTML = selectedQuantity;
 
 function increaseQuantity(){
+  if(selectedQuantity < 5){
     selectedQuantity++;
     quantityDiv.innerHTML = selectedQuantity;
+  }
 }
 function decreaseQuantity(){
     if(selectedQuantity > 1){
@@ -211,6 +213,15 @@ function displayCart() {
         '<div class="product-line-top"><div>'
 
       cartItems.appendChild(item);
+      
+      if(cart[i].size != undefined){
+        let sizeDiv = document.createElement('div');
+        sizeDiv.classList.add('cart-size');
+
+        sizeDiv.innerHTML = '<p class="opa-product">'+cart[i].size+'</p>';
+
+        cartItems.appendChild(sizeDiv);
+      }
 
 
     }
@@ -353,108 +364,168 @@ function updateCartAmount() {
   cartAmount.innerHTML = cart.length;
 }
 
-document.querySelector('.x').addEventListener("click", ()=>{
 
-  let tl13 = anime.timeline({
-    easing: 'easeOutExpo', 
-    duration:3000
-  })
-  tl13.add({
-    targets: '.opa-product',
-    duration:2500,
-    delay: anime.stagger(400,{start:0}),
-    opacity:0,
+  const button = document.querySelector('.x');
+  let isAnimating = false;
   
-  })
-
-  let tl15 = anime.timeline({
-    easing: 'easeOutExpo', 
-    duration:3000
-  })
-  tl15.add({
-    targets:'.product-line-top',
-    width: '0%',
-    delay:anime.stagger(1000,{start:1000}),
-  })
- 
-  const tl12 = anime.timeline({
-    easing: 'easeOutExpo',
-    duration: 3000, 
+  button.addEventListener("click", ()=>{
+    if (isAnimating) return;
+    isAnimating = true;
+  
+    // Rest of the animation code
+  
+  
+    let tl13 = anime.timeline({
+      easing: 'easeOutExpo', 
+      duration:3000
+    })
+    tl13.add({
+      targets: '.opa-product',
+      duration:2500,
+      delay: anime.stagger(400,{start:0}),
+      opacity:0,
+    
+    })
+  
+    let tl15 = anime.timeline({
+      easing: 'easeOutExpo', 
+      duration:3000
+    })
+    tl15.add({
+      targets:'.product-line-top',
+      width: '0%',
+      delay:anime.stagger(1000,{start:1000}),
+    })
+   
+    const tl12 = anime.timeline({
+      easing: 'easeOutExpo',
+      duration: 3000, 
+    });
+    
+    tl12
+    .add({
+      targets: '.tcc',
+      delay: anime.stagger(200,{start:3000}),
+      duration: 3000, 
+      translateY: '0vh',
+    })
+    
+    const tl11 = anime.timeline({
+      easing: 'easeOutExpo',
+      duration: 3000, 
+    });
+    tl11.add({
+      targets:'.main-wrap',
+      opacity:1
+    })
+    
+    
+    
+  
+    const tl10 = anime.timeline({
+      easing: 'easeOutExpo',
+      duration: 3000, 
+    });
+    tl10.add({
+      targets: '.line',
+      width: '0%',
+      duration:3000,
+      delay: 2200,
+    })
+  
+  
+    // Prevent the animation function from being called again for 3 seconds
+    setTimeout(() => {
+      isAnimating = false;
+    }, 3000);
   });
   
-  tl12
-  .add({
-    targets: '.tcc',
-    delay: anime.stagger(200,{start:3000}),
-    duration: 3000, 
-    translateY: '0vh',
-  })
-  
-  const tl11 = anime.timeline({
-    easing: 'easeOutExpo',
-    duration: 3000, 
-  });
-  tl11.add({
-    targets:'.main-wrap',
-    opacity:1
-  })
-  
-  
-  
-
-  const tl10 = anime.timeline({
-    easing: 'easeOutExpo',
-    duration: 3000, 
-  });
-  tl10.add({
-    targets: '.line',
-    width: '0%',
-    duration:3000,
-    delay: 2200,
-  })
-
-
-
-  
-}
-);  
+   
 
 
 
 // get the add to cart link
 let addToCartLink = document.querySelector(".cart-add");
+let size = '';
 
-// add a click event to the link
+// get the dropdown element and its children
+let dropdown = document.querySelector('.dropdown');
+let dropdownItems = dropdown.querySelectorAll('.dropdown-content a');
+
+let dropdownBTN = document.querySelector('.dropbtn');
+let sizeNotSelected = document.querySelector('.size-not-selected');
+
+// add click event listener to each dropdown item
+dropdownItems.forEach(item => {
+  item.addEventListener('click', function(e) {
+    // prevent the default link behavior
+    e.preventDefault();
+
+    // remove the active class from all items
+    dropdownItems.forEach(item => {
+      item.classList.remove('active');
+    });
+
+    // add the active class to the clicked item
+    this.classList.add('active');
+
+    // set the text of the dropdown button to the selected size
+    dropdownBTN.innerHTML = this.innerHTML;
+    size = this.innerHTML;
+    
+    // hide the message if a size is selected
+    if (sizeNotSelected) {
+      sizeNotSelected.innerHTML = '';
+    }
+  });
+});
+
+// get the selected size when adding to cart
 addToCartLink.addEventListener("click", function (e) {
   // prevent the default link behavior
   e.preventDefault();
 
-  // the product information
-  let product = {
-    id: 2,
-    name: "00001TEE",
-    price: 88.88,
-    priceId: 'price_1MeGnjGxHZYMtDr3NayzfMrO',
-    quantity: selectedQuantity,
-  };
+  // get the value of the active dropdown item
+  let selectedSize = dropdown.querySelector('.active');
 
-  // check if the product is already in the cart
-  let itemIndex = cart.findIndex((item) => item.id === product.id);
+  if (selectedSize) {
+    // the product information
+    let product = {
+      id: 2,
+      name: "00001TEE",
+      price: 88.88,
+      priceId: 'price_1MeGnjGxHZYMtDr3NayzfMrO',
+      quantity: selectedQuantity,
+      size: size
+    };
 
-  if (itemIndex === -1) {
-    // if the product is not in the cart, add it
-    cart.push(product);
+
+
+    // check if the product is already in the cart
+    let itemIndex = cart.findIndex((item) => item.id === product.id);
+
+    if (itemIndex === -1) {
+      // if the product is not in the cart, add it
+      cart.push(product);
+    } else {
+      // if the product is already in the cart, update its quantity
+      cart[itemIndex].quantity += product.quantity;
+    }
+
+    // store the updated cart in session storage
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    // update the cart amount display
+    updateCartAmount();
   } else {
-    // if the product is already in the cart, update its quantity
-    cart[itemIndex].quantity += product.quantity;
+    // show the message if no size is selected
+    if (sizeNotSelected) {
+      sizeNotSelected.innerHTML = 'Please select a size before continuing'
+    }
   }
-
-  // store the updated cart in session storage
-  localStorage.setItem("cart", JSON.stringify(cart));
-
-  // update the cart amount display
-  updateCartAmount();
 });
+
+
 
 
 
