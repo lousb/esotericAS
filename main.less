@@ -1,16 +1,19 @@
 
 .nav-li a:hover{
   text-decoration: none;
-  color: black;
-  padding-bottom:10px;
-  border-bottom:17px solid rgba(255, 255, 255, 0.3);
+  // color: black;
+  // padding-bottom:10px;
+  // border-bottom:17px solid rgba(255, 255, 255, 0.3);
   transition-duration: 1;
+  text-decoration: underline;
   
 }
 .nav-li a{
   text-decoration: none;
   color: whitesmoke;
-  letter-spacing: .15rem;
+}
+body{
+  filter: invert(1);
 }
 
 html, body {
@@ -93,6 +96,7 @@ a:hover::before {
 }
 nav{
   z-index: 3;
+  gap: 1em;
   bottom:env(safe-area-inset-bottom);
   position: absolute;
   width: 100%;
@@ -106,7 +110,13 @@ nav{
 
 
 .insta{
-  opacity: 0.2;
+  opacity: 1;
+  height: 1.2em;
+  width: 1.2em;
+}
+.insta img{
+  height: 1.2em;
+  width: 1.2em;
 }
 .insta:hover{
   opacity: 0.8;
@@ -121,10 +131,11 @@ nav{
   z-index: 3;
   color:black;
   list-style-type: none;
-  margin-left:15%;
-  flex: 1 1 0;
+  display: flex;
+  justify-content: center;
   margin-bottom:20px;
   background-color: transparent;
+
 }
 .black-nav{
   color:black !important;
@@ -394,12 +405,9 @@ letter-spacing: -0.1em;
     width:100%;
   }
   nav{
-    transform: translateY(-8vh) translateX(20px);
+    transform: translateY(-8vh);
   }
-  .nav-li{
-    margin-left:10%;
-    font-size: small;
-  }
+
   canvas{
     min-width: 100%;
   }
