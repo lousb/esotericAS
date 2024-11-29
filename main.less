@@ -1,19 +1,23 @@
 
 .nav-li a:hover{
   text-decoration: none;
-  color: black;
-  padding-bottom:10px;
-  border-bottom:17px solid rgba(255, 255, 255, 0.3);
+  // color: black;
+  // padding-bottom:10px;
+  // border-bottom:17px solid rgba(255, 255, 255, 0.3);
   transition-duration: 1;
+  text-decoration: underline;
   
 }
 .nav-li a{
   text-decoration: none;
   color: whitesmoke;
-  letter-spacing: .15rem;
+}
+body{
+  filter: invert(1);
 }
 
 html, body {
+  
   width: 100vw;
   height: 100vh;
   margin: 0;
@@ -92,6 +96,7 @@ a:hover::before {
 }
 nav{
   z-index: 3;
+  gap: 1em;
   bottom:env(safe-area-inset-bottom);
   position: absolute;
   width: 100%;
@@ -105,7 +110,13 @@ nav{
 
 
 .insta{
-  opacity: 0.2;
+  opacity: 1;
+  height: 1.2em;
+  width: 1.2em;
+}
+.insta img{
+  height: 1.2em;
+  width: 1.2em;
 }
 .insta:hover{
   opacity: 0.8;
@@ -120,10 +131,11 @@ nav{
   z-index: 3;
   color:black;
   list-style-type: none;
-  margin-left:15%;
-  flex: 1 1 0;
+  display: flex;
+  justify-content: center;
   margin-bottom:20px;
   background-color: transparent;
+
 }
 .black-nav{
   color:black !important;
@@ -343,16 +355,17 @@ a{
   text-transform: uppercase;
   font-weight: bold;
   line-height: 0.8em;
-  font-size: 6em;
-  letter-spacing: -0.17em;
+  font-size: 10vw;
+  letter-spacing: -0.1em;
   color:white;
   mix-blend-mode: difference;
 
 }
 .black{
 
-  padding-top: 0.3em;
-  font-size: 6em;
+  
+font-size: 10vw;
+letter-spacing: -0.1em;
   color:black;
   mix-blend-mode: color-burn;
   opacity: 0.5;
@@ -392,8 +405,9 @@ a{
     width:100%;
   }
   nav{
-    transform:scale(0.8);
+    transform: translateY(-8vh);
   }
+
   canvas{
     min-width: 100%;
   }
@@ -596,13 +610,32 @@ a{
   top:0;
   left:0;
   width:100vw;
-  height:100vw;
+  height:250vw;
   background-color: white;
   z-index: 500;
   pointer-events: none;
   opacity: 0;
 }
-
+.main-announcement{
+  position: fixed;
+  top:0;
+  
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  mix-blend-mode: difference;
+z-index: 9999;
+}
+.main-announcement h3{
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 0.9em;
+  width: max-content;
+  background-color: white;
+  padding: 10px 30px 10px 30px;
+  margin: 0;
+  border-radius: 0px 0px 10px 10px;
+}
 
 @media only screen and (max-width: 500px){
   .product-product{
@@ -610,6 +643,7 @@ a{
     letter-spacing: -5px;
   }
 }
+
 
 
 @media only screen and (max-width: 950px){
